@@ -22,40 +22,27 @@ namespace ZnamkyConsole {
                 Console.ResetColor();
                 char r = Console.ReadKey().KeyChar;
                 int menu = (int)Char.GetNumericValue(r);
+                //--------------Výpis--------------------
+                if (menu != 1 && menu != 2 && menu != 3) {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Špatně zadaná hodnota!");
+                    Console.ResetColor();
+                }
                 if (menu == 1) {
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Vyber předmět:");
+                    Console.ResetColor();
                     writesubjects();
-                    
+                    Console.ForegroundColor = ConsoleColor.Green;
                     int SubjectRead = Int32.Parse(Console.ReadLine());
-                    if (SubjectRead == 1) {
-                        SubjectNew = "Anglický jazyk";
-                    } else if (SubjectRead == 2) {
-                        SubjectNew = "Animační a vizualizační systémy";
-                    } else if (SubjectRead == 3) {
-                        SubjectNew = "Český jazyk a literatura";
-                    } else if (SubjectRead == 4) {
-                        SubjectNew = "Ekonomika";
-                    } else if (SubjectRead == 5) {
-                        SubjectNew = "Matematika";
-                    } else if (SubjectRead == 6) {
-                        SubjectNew = "Německý jazyk";
-                    } else if (SubjectRead == 7) {
-                        SubjectNew = "Operační systémy";
-                    } else if (SubjectRead == 8) {
-                        SubjectNew = "Počítačové sítě";
-                    } else if (SubjectRead == 9) {
-                        SubjectNew = "Praktická cvičení";
-                    } else if (SubjectRead == 10) {
-                        SubjectNew = "Tělesná výchova";
-                    } else if (SubjectRead == 11) {
-                        SubjectNew = "Vývoj aplikací a her";
-                    } else if (SubjectRead == 12) {
-                        SubjectNew = "Základy společenských věd";
-                    }
+                    Console.ResetColor();
+                    readsubjects(SubjectRead);
                     Console.Clear();
                     loadMarks(SubjectNew);
                 }
+                //--------------Zápis--------------------
                 if (menu == 2) {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -64,31 +51,7 @@ namespace ZnamkyConsole {
                     Console.ForegroundColor = ConsoleColor.Green;
 
                     int SubjectRead = Int32.Parse(Console.ReadLine());
-                    if (SubjectRead == 1) {
-                        SubjectNew = "Anglický jazyk";
-                    } else if (SubjectRead == 2) {
-                        SubjectNew = "Animační a vizualizační systémy";
-                    } else if (SubjectRead == 3) {
-                        SubjectNew = "Český jazyk a literatura";
-                    } else if (SubjectRead == 4) {
-                        SubjectNew = "Ekonomika";
-                    } else if (SubjectRead == 5) {
-                        SubjectNew = "Matematika";
-                    } else if (SubjectRead == 6) {
-                        SubjectNew = "Německý jazyk";
-                    } else if (SubjectRead == 7) {
-                        SubjectNew = "Operační systémy";
-                    } else if (SubjectRead == 8) {
-                        SubjectNew = "Počítačové sítě";
-                    } else if (SubjectRead == 9) {
-                        SubjectNew = "Praktická cvičení";
-                    } else if (SubjectRead == 10) {
-                        SubjectNew = "Tělesná výchova";
-                    } else if (SubjectRead == 11) {
-                        SubjectNew = "Vývoj aplikací a her";
-                    } else if (SubjectRead == 12) {
-                        SubjectNew = "Základy společenských věd";
-                    }
+                    readsubjects(SubjectRead);
 
                     Console.WriteLine("\nZnámka:");
                     char ValueChar = Console.ReadKey().KeyChar;
@@ -99,10 +62,11 @@ namespace ZnamkyConsole {
                     Console.ResetColor();
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Kniha byla přidána!");
+                    Console.WriteLine("Známka byla přidána!");
                     Console.ResetColor();
                     saveMarks(SubjectNew, ValueNew, WeightNew);
                 }
+                //--------------Exit--------------------
                 if (menu == 3) {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -115,9 +79,10 @@ namespace ZnamkyConsole {
         static async void saveMarks(string subject, int value, int weight) {
             await MySQL.Database.SaveItemAsync(new Marks { Subject = subject, Value = value, Weight = weight });
         }
+
         static async void loadMarks(string subject) {
             loadedMarks = await MySQL.Database.GetItemsAsync();
-                        Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Známky z " + subject);
             Console.ResetColor();
             var loadedMarksCopy = loadedMarks.Where(s => s.Subject == subject);
@@ -145,6 +110,34 @@ namespace ZnamkyConsole {
             Console.WriteLine("11] Vývoj aplikací a her");
             Console.WriteLine("12] Základy společenských věd");
             Console.ResetColor();
+        }
+
+        static void readsubjects(int SubjectRead) {
+            if (SubjectRead == 1) {
+                SubjectNew = "Anglický jazyk";
+            } else if (SubjectRead == 2) {
+                SubjectNew = "Animační a vizualizační systémy";
+            } else if (SubjectRead == 3) {
+                SubjectNew = "Český jazyk a literatura";
+            } else if (SubjectRead == 4) {
+                SubjectNew = "Ekonomika";
+            } else if (SubjectRead == 5) {
+                SubjectNew = "Matematika";
+            } else if (SubjectRead == 6) {
+                SubjectNew = "Německý jazyk";
+            } else if (SubjectRead == 7) {
+                SubjectNew = "Operační systémy";
+            } else if (SubjectRead == 8) {
+                SubjectNew = "Počítačové sítě";
+            } else if (SubjectRead == 9) {
+                SubjectNew = "Praktická cvičení";
+            } else if (SubjectRead == 10) {
+                SubjectNew = "Tělesná výchova";
+            } else if (SubjectRead == 11) {
+                SubjectNew = "Vývoj aplikací a her";
+            } else if (SubjectRead == 12) {
+                SubjectNew = "Základy společenských věd";
+            }
         }
     }
 }

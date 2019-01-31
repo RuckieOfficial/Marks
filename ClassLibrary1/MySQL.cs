@@ -11,7 +11,7 @@ namespace ClassLibrary1 {
             get {
                 if (database == null) {
                     database = new TodoItemDatabase(
-                      Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"D:/source/repos/Znamky/data.db3"));
+                      Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"data.db3"));
                 }
                 return database;
             }
