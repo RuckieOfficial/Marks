@@ -18,7 +18,7 @@ namespace ClassLibrary1 {
         }
 
         public Task<List<Marks>> GetItemsNotDoneAsync() {
-            return database.QueryAsync<Marks>("SELECT * FROM [Marks] WHERE [Done] = 0");
+            return database.QueryAsync<Marks>("SELECT * FROM [Marks]");
         }
 
         public Task<Marks> GetItemAsync(int id) {
