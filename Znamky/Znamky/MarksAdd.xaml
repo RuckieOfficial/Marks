@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Znamky.MarksAdd">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker Title="Vyber předmět" x:Name="Subject">
+                <Picker.Items>
+                    <x:String>Anglický jazyk</x:String>
+                    <x:String>Animační a vizualizační systémy</x:String>
+                    <x:String>Český jazyk a literatura</x:String>
+                    <x:String>Ekonomika</x:String>
+                    <x:String>Matematika</x:String>
+                    <x:String>Německý jazyk</x:String>
+                    <x:String>Operační systémy</x:String>
+                    <x:String>Počítačové sítě</x:String>
+                    <x:String>Praktická cvičení</x:String>
+                    <x:String>Tělesná výchova</x:String>
+                    <x:String>Vývoj aplikací a her</x:String>
+                    <x:String>Základy společenských vět</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Keyboard="Text" x:Name="Mark" Placeholder="Známka"></Entry>
+            <Entry x:Name="Weight" Placeholder="Váha"></Entry>
+            <Button x:Name="Submit" Clicked="SubmitMark" Text="Přidat"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -9,7 +9,7 @@ namespace ClassLibrary1 {
         public int Id { get; set; }
         public string Subject { get; set; }
         [MaxLength(1)]
-        public int Value { get; set; }
+        public double Value { get; set; }
         [MaxLength(3)]
         public int Weight { get; set; }
     }

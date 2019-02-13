@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,7 +10,7 @@ namespace Znamky {
         public App() {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Menu();
         }
 
         protected override void OnStart() {
@@ -22,5 +24,6 @@ namespace Znamky {
         protected override void OnResume() {
             // Handle when your app resumes
         }
+        
     }
 }
