@@ -8,8 +8,8 @@ using Xamarin.Forms.Xaml;
 
 namespace Znamky {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class markspage : ContentPage {
-        public markspage() {
+    public partial class Markspage : ContentPage {
+        public Markspage() {
             InitializeComponent();
         }
         public async void Marksnav(Button button) {

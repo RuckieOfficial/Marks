@@ -15,10 +15,10 @@ namespace Znamky
 	{
 
         Dictionary<ImageButton, Marks> mark = new Dictionary<ImageButton, Marks>();
-        private string Subject;
         ScrollView view = new ScrollView { };
-        StackLayout layout1 = new StackLayout { };
+        StackLayout layout = new StackLayout { };
         Color color = Color.Black;
+        private string Subject;
         public Marksp ()
 		{
 			InitializeComponent ();
@@ -29,7 +29,7 @@ namespace Znamky
             LoadMarks(Subject);            
         }
         public async void LoadMarks(string Subject) {
-            layout1.Children.Clear();
+            layout.Children.Clear();
             var Content = new ContentPage();
             List<Marks> marks = await MySQL.Database.GetItemsNotDoneAsync();
             List<Marks> matches = marks.Where(s => s.Subject == Subject).ToList();     
@@ -47,9 +47,9 @@ namespace Znamky
             }else {
                 
                 var lab = new Label { Text = "V předmětu nejsou žádné známky!", FontSize = 25, FontAttributes = FontAttributes.Bold };
-                layout1.Children.Add(lab);
+                layout.Children.Add(lab);
             }
-            view.Content = layout1;
+            view.Content = layout;
             this.Content = view;
         }
         
@@ -68,32 +68,32 @@ namespace Znamky
             if ((mark % 1) == 0) {
                 return mark.ToString();
             }else {
-                double m = Convert.ToInt32(mark);
-                return m + "-";
+                double x = Convert.ToInt32(mark);
+                return x + "-";
             }
         }
         private void MarkAvg(double avg, double avg2) {
             double avgfinal = avg / avg2;
-            string f = String.Format("{0:0.00}", avgfinal);
-            var label3 = new Label { Text = "Průměr:" + f, FontSize = 25 };
-            layout1.Children.Add(label3);
+            string x = String.Format("{0:0.00}", avgfinal);
+            var label3 = new Label { Text = "Průměr:" + x, FontSize = 25 };
+            layout.Children.Add(label3);
         }
         private void CreateMark(Marks item) {
-            if (item.Value >= 4.5) {
+            if (item.Value == 4.5) {
                 color = Color.Red;
             } else {
                 color = Color.Black;
             }
             var layout2 = new StackLayout { Orientation = StackOrientation.Horizontal, BackgroundColor = Color.LightGray };
-            var label = new Label { Text = item.Value.ToString(), FontSize = 30, FontAttributes = FontAttributes.Bold, TextColor = color, Margin = 2, WidthRequest = 100 };
+            var label = new Label { Text = item.Value.ToString(), FontSize = 25, FontAttributes = FontAttributes.Bold, TextColor = color, Margin = 2, WidthRequest = 100 };
             var label2 = new Label { Text = item.Weight.ToString(), FontSize = 20, HorizontalTextAlignment = TextAlignment.End, WidthRequest = 300, Margin = 2, VerticalTextAlignment = TextAlignment.Center };
-            var img = new ImageButton { Source = "delete.png", WidthRequest = 20, HeightRequest = 20 };
-            img.Clicked += new EventHandler(DeleteMark);
+            var del = new ImageButton { Source = "delete.png", WidthRequest = 20, HeightRequest = 20 };
+            del.Clicked += new EventHandler(DeleteMark);
             layout2.Children.Add(label);
             layout2.Children.Add(label2);
-            layout2.Children.Add(img);
-            layout1.Children.Add(layout2);
-            mark.Add(img, item);
+            layout2.Children.Add(del);
+            layout.Children.Add(layout2);
+            mark.Add(del, item);
         }
 
 	}

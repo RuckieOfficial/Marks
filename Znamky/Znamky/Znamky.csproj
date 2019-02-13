@@ -24,6 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="markspage.xaml.cs">
+      <DependentUpon>Markspage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Uvod.xaml.cs">
+      <DependentUpon>Uvod.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MasterDetailPage1MenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="About.xaml">
+    <EmbeddedResource Update="Uvod.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MarksAdd.xaml">
@@ -42,7 +48,7 @@
     <EmbeddedResource Update="Marksp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="markspage.xaml">
+    <EmbeddedResource Update="Markspage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPage1Detail.xaml">
@@ -54,14 +60,5 @@
     <EmbeddedResource Update="MenuMaster.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TabbedPage1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="delete.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>

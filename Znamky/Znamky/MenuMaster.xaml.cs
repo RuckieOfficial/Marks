@@ -33,7 +33,7 @@ namespace Znamky
             {
                 MenuItems = new ObservableCollection<MenuMenuItem>(new[]
                 {
-                    new MenuMenuItem { Id = 0, Title = "Výpis známek", TargetType = typeof(markspage) },
+                    new MenuMenuItem { Id = 0, Title = "Výpis známek", TargetType = typeof(Markspage) },
                     new MenuMenuItem { Id = 1, Title = "Přidat známku", TargetType = typeof(MarksAdd) },
                     
                 });

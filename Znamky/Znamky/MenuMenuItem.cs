@@ -11,7 +11,6 @@ namespace Znamky
     {
         public MenuMenuItem()
         {
-            //TargetType = typeof(MenuDetail);
         }
         public int Id { get; set; }
         public string Title { get; set; }

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Znamky.About">
+             x:Class="Znamky.Uvod">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Aplikace na přídávání a zobrazování známek."/>
-            <Label Text="Použijte menu v levo nahoře."/>
+            <Label Text="Použijte menu vlevo nahoře."/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,8 +5,6 @@
              x:Class="Znamky.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Button Text="Přidat známku"></Button>
     </StackLayout>
 
 </ContentPage>

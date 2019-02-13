@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Android.Widget;
 
 namespace Znamky
 {
@@ -30,7 +29,7 @@ namespace Znamky
             }
         }
         public async void AddMark(string subject, double mark, int weight) {
-            Toast.MakeText(Android.App.Application.Context, "Známka přidána!", ToastLength.Short).Show();
+            await DisplayAlert("Přidáno!", "Známka přidána", "Potvrdit");
             await MySQL.Database.SaveItemAsync(new Marks { Subject = subject, Value = mark, Weight = weight });     
         }
 	}

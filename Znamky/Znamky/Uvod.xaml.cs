@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Znamky
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class About : ContentPage
+	public partial class Uvod : ContentPage
 	{
-		public About ()
+		public Uvod ()
 		{
 			InitializeComponent ();
 		}
