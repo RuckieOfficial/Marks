@@ -16,16 +16,22 @@ namespace Znamky
 		{
 			InitializeComponent ();
 		}
+
+        void znamkachange(object sender, ValueChangedEventArgs e) {
+            double value = e.NewValue;
+            znamka.Text = string.Format("{0}", value);
+        }
+
+        void vahachange(object sender, ValueChangedEventArgs e) {
+            double value = e.NewValue;
+            vaha.Text = string.Format("{0}", value);
+        }
+
         private void SubmitMark(object sender, EventArgs e) {
             try {
-                if (Convert.ToDouble(Mark.Text) >= 6 || Int32.Parse(Weight.Text) > 100 || Int32.Parse(Weight.Text) < 1) {
-                    DisplayAlert("Špatný vstup!", "Známky mohou být pouze od 1 do 5 a Váha od 1 do 100!", "Hotovo");
-                }else {
-                    AddMark(Subject.SelectedItem.ToString(), Convert.ToDouble(Mark.Text), Int32.Parse(Weight.Text));
-                }
-                
-            }catch {
-                DisplayAlert("Špatný vstup!", "Zadejte hodnoty znovu", "Hotovo");
+                AddMark(Subject.SelectedItem.ToString(), Convert.ToDouble(znamka.Text), Int32.Parse(vaha.Text));
+            } catch {
+                DisplayAlert("Špatný vstup!", "Zadejte všechny hodnoty", "Hotovo");
             }
         }
         public async void AddMark(string subject, double mark, int weight) {

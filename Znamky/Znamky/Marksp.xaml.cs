@@ -54,8 +54,8 @@ namespace Znamky
         }
         
         private async void DeleteMark(object sender, EventArgs e) {
-            bool t =  await DisplayAlert("Smazání známky", "Opravdu chcete smazat známku?", "Smazat", "Zrušit");
-            if (t == true) {
+            bool x =  await DisplayAlert("Smazání známky", "Opravdu chcete smazat známku?", "Smazat", "Zrušit");
+            if (x == true) {
                 ImageButton button = (sender as ImageButton);
                 await MySQL.Database.DeleteItemAsync(mark[button]);
                 LoadMarks(Subject);

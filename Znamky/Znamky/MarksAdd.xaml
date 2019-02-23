@@ -20,8 +20,16 @@
                     <x:String>Základy společenských vět</x:String>
                 </Picker.Items>
             </Picker>
-            <Entry Keyboard="Text" x:Name="Mark" Placeholder="Známka"></Entry>
-            <Entry x:Name="Weight" Placeholder="Váha"></Entry>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Známka: " VerticalTextAlignment="Center" FontSize="20"/>
+                <Label x:Name="znamka" Text="1" VerticalTextAlignment="Center" FontSize="20"/>
+            <Stepper x:Name="znamkavalue" Minimum="1" Maximum="5" Increment="1" ValueChanged="znamkachange" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Váha: " VerticalTextAlignment="Center" FontSize="20"/>
+                <Label x:Name="vaha" Text="10" VerticalTextAlignment="Center" FontSize="20"/>
+                <Stepper x:Name="vahavalue" Minimum="10" Maximum="100" Increment="10" ValueChanged="vahachange" />
+            </StackLayout>
             <Button x:Name="Submit" Clicked="SubmitMark" Text="Přidat"></Button>
         </StackLayout>
     </ContentPage.Content>
