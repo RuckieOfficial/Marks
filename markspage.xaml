@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Znamky.Markspage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center" Text="Anglický jazyk" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Animační a vizualizační systémy" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Český jazyk a literatura" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Ekonomika" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Matematika" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Německý jazyk" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Operační systémy" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Počítačové sítě" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Praktická cvičení" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Tělesná výchova" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Vývoj aplikací a her" Clicked="ShowMarks"></Button>
+                <Button BackgroundColor="Transparent" TextColor="Black" HorizontalOptions="Center"  Text="Základy společenských věd" Clicked="ShowMarks"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

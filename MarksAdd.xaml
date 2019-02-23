@@ -4,7 +4,7 @@
              x:Class="Znamky.MarksAdd">
     <ContentPage.Content>
         <StackLayout>
-            <Picker Title="Vybrat předmět" x:Name="Subject">
+            <Picker Title="Vyber předmět" x:Name="Subject">
                 <Picker.Items>
                     <x:String>Anglický jazyk</x:String>
                     <x:String>Animační a vizualizační systémy</x:String>

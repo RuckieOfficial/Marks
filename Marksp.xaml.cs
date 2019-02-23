@@ -33,7 +33,7 @@ namespace Znamky
             var Content = new ContentPage();
             List<Marks> marks = await MySQL.Database.GetItemsNotDoneAsync();
             List<Marks> matches = marks.Where(s => s.Subject == Subject).ToList();     
-            double avg = 0;
+             double avg = 0;
             double avg2 = 0;
             if (matches.Count > 0) {
                 foreach (Marks item in matches) {
@@ -46,7 +46,7 @@ namespace Znamky
                 MarkAvg(avg, avg2);
             }else {
                 
-                var lab = new Label { Text = "V předmětu nejsou žádné známky!", FontSize = 20, FontAttributes = FontAttributes.Bold };
+                var lab = new Label { Text = "V předmětu nejsou žádné známky!", FontSize = 25, FontAttributes = FontAttributes.Bold };
                 layout.Children.Add(lab);
             }
             view.Content = layout;

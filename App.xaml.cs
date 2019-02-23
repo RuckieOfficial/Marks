@@ -10,7 +10,7 @@ namespace Znamky {
         public App() {
             InitializeComponent();
 
-            MainPage = new Hlavni();
+            MainPage = new Menu();
         }
 
         protected override void OnStart() {

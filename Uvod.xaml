@@ -4,9 +4,8 @@
              x:Class="Znamky.Uvod">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Vítejte v aplikaci na přidávání a zobrazování známek."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Aplikace na přídávání a zobrazování známek."/>
+            <Label Text="Použijte menu vlevo nahoře."/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
